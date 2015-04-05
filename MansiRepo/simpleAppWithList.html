@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Hello World</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script>
+        angular.module("myApp",[]).controller('MyAppController', function($scope){
+            $scope.collection = [{name:"Mansi"},{name:"Shirbhate"},{name:"Abhinav"}]
+            $scope.addEntry = function(){
+                $scope.collection.push({name:$scope.newData})
+            };
+        })
+
+
+
+    </script>
+
+</head>
+<body>
+<div ng-controller="MyAppController">
+    <table>
+        <tr ng-repeat="entry in collection">
+            <td>{{entry.name}}</td>
+        </tr>
+    </table>
+    <ul>
+        <input type="text" ng-model="newData"/>
+        <button ng-click="addEntry()">Add</button>
+    </ul>
+
+</div>
+
+</body>
+</html>

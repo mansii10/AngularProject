@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html ng-app="initApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Hello World</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script>
+        /*angular.module("initApp",[]).controller('initController', function($scope){
+            $scope.collection = [{name:'Mansi'},{name:'Akhilesh'},{name:'Shirbhate'}];
+        })*/
+    </script>
+
+</head>
+<body>
+<!--if we dont want to bind object or html element with controller, we can use ng-init, use for testing-->
+<div ng-init="collection = [{name:'Mansi'},{name:'Akhilesh'},{name:'Shirbhate'}]">
+    <ul>
+        <li ng-repeat="entry in collection"> {{entry.name}}</li>
+    </ul>
+</div>
+
+</body>
+</html>

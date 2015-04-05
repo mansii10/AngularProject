@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html ng-app="methodApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script>
+        /*we cant put default value or placeholder in html input as it will again show NAN for placeholder*/
+        /*primitive value on scope */
+        angular.module("methodApp",[]).controller("methodController", function($scope){
+            $scope.value = "9";
+            $scope.square=function(value){
+                return value * value;
+            }
+        })
+    </script>
+</head>
+<body>
+    <div ng-controller="methodController">
+        <input type="text" ng-model="value"/>  <!--placeholder="8"-->
+        <h3 ng-show="value"> {{square(value)}} </h3>
+
+    </div>
+
+</body>
+</html>

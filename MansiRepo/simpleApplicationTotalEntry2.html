@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Hello World</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script>
+        angular.module("myApp",[]).controller('MyAppController', function($scope){
+            $scope.collection =
+                    [{name:"Kristin", age:"37", city: "San Jose"},
+                     {name:"Sagar", age:"5", city: "New York"},
+                     {name:"Sashi", age:"23", city: "Sunnyvale"},
+                     {name:"Hemaangi", age:"8", city: "Palo Alto"}];
+
+            $scope.addEntry = function(){
+                $scope.collection.push({name:$scope.newData})
+                $scope.newData = '';
+            };
+        })
+    </script>
+</head>
+<body>
+
+    <div ng-controller="MyAppController">
+        <table>
+        <tr>
+            <th>No</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>City</th>
+        </tr>
+        <tr ng-repeat="entry in collection">
+            <td>{{$index +1}}</td>
+            <td>{{entry.name}}</td>
+            <td>{{entry.age}}</td>
+            <td>{{entry.city}}</td>
+        </tr>
+        </table>
+        <p>Total Entry: {{collection.length}}</p>
+        <input type="text" ng-model="newData"/>
+        <button ng-click="addEntry()">Add</button>
+
+    </div>
+
+</body>
+</html>

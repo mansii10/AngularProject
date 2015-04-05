@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html ng-app="methodApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <link rel="stylesheet" href="css/base.css"/>
+    <script>
+        /*create an object on scope and it is not a direct property of value */
+        angular.module("methodApp",[]).controller("methodController", function($scope){
+            $scope.data = {value:9};
+            $scope.square=function(value){
+                return value * value;
+            }
+        })
+    </script>
+</head>
+<body>
+<div ng-controller="methodController">
+    <input type="text" ng-model="data.value"/>  <!--placeholder="8"-->
+    <h3 ng-show="data.value"> {{square(data.value)}} </h3>
+
+</div>
+
+</body>
+</html>

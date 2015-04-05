@@ -1,0 +1,21 @@
+#show{
+    border: 1px solid brown;
+}
+
+table{
+    border-collapse: collapse;
+    color:purple;
+}
+
+td,th{
+    border: 1px solid black;
+    padding:10px;
+}
+p{
+    color:purple;
+}
+
+form{
+    width:200px;
+    padding: 10px;
+}

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html ng-app="repeatApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Angular Hello World</title>
+    <script src="../bower_components/angular/angular.js"></script>
+    <script>
+        angular.module("repeatApp",[]).controller('repeatController', function($scope){
+            $scope.collection = [{name:'Mansi'},{name:'Akhilesh'},{name:'Shirbhate'},];
+        })
+
+
+    </script>
+
+</head>
+<body>
+<div ng-controller="repeatController">
+    <h1 ng-repeat-start="entry in collection">Data</h1>
+    <p>{{entry.name}}</p>
+    <h3 ng-repeat-end>Data End</h3>
+</div>
+
+</body>
+</html>
